@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def create
     @review = Review.new review_params
-    @restaurant = Restaurant.find params[:restaurant_id]
+    @restaurant = Restaurant.findparams[:restaurant_id]
     @review.restaurant = @restaurant
     if @review.save
       redirect_to @restaurant, notice: "Restaurant was successfully created."
