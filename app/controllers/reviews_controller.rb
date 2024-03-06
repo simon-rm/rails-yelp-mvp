@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
   def create
     @review = Review.new review_params
-    @restaurant = Restaurant.findparams[:restaurant_id]
+    @restaurant = Restaurant.find params[:restaurant_id]
     @review.restaurant = @restaurant
     if @review.save
       redirect_to @restaurant, notice: "Restaurant was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render 'restaurants/show', status: :unprocessable_entity
     end
   end
   private
