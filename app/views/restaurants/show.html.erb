@@ -2,7 +2,11 @@
 
 <%= render @restaurant %>
 
-<%= render @reviews %>
+<ul>
+  <%@reviews.each do |review|%>
+    <li><%=review.content%></li>
+  <%end%>
+</ul>
 
 <div>
   <%= link_to "Back to restaurants", restaurants_path %>
